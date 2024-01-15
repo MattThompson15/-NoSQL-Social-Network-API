@@ -14,9 +14,7 @@ mongoose.connect('mongodb:/localhost/social-network-api', {
     useFindAndModify: false,
 });
 
-mongoose.connection.once('open', () => {
-    console.log('connected to MongoDB');
-});
+mongoose.set('debug', true);
 
 app.listen(PORT, () => {
     console.log(`server running on http://localhost:${PORT}`);
