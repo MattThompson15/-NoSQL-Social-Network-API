@@ -1,6 +1,7 @@
 const { Thought, User, Reaction } = require('../models');
 const { Types } = require('mongoose');
 
+// Get all thoughts
 const ThoughtController = {
    async getAllThoughts(req, res) {
     try {
@@ -11,6 +12,8 @@ const ThoughtController = {
     }
    },
 
+
+   // Get a single thought by ID
    async getThoughtsById(req, res) {    
     try {
         const thought = await Thought.findOne({_id:req.params.thoughtId});
@@ -24,6 +27,7 @@ const ThoughtController = {
         } 
    },
 
+   // Create a new thought
    async createThought(req, res) {
     try {
         const thought = await Thought.create(req.body);
@@ -33,6 +37,7 @@ const ThoughtController = {
     }
    },
 
+   // Delete a thought
    async deleteThought(req, res) {
     try {
         const thought = await Thought.findByIdAndDelete({_id:req.params.thoughtId});
@@ -42,6 +47,7 @@ const ThoughtController = {
     }
    },
 
+   // Update a thought
    async updateThoughtById(req, res) {
     try {
         const thought = await Thought.findByIdAndUpdate(req.params.thoughtId, req.body, {new: true});
@@ -55,6 +61,7 @@ const ThoughtController = {
         }
    },
 
+   // Add a reaction to a thought
    async createReaction(req, res) {
     try {
         const thought = await Thought.findOneAndUpdate(
@@ -68,6 +75,7 @@ const ThoughtController = {
     }  
    },
 
+   // Delete a reaction from a thought
    async deleteReaction(req, res) {
     try {
         const thought = await Thought.findOneAndUpdate(

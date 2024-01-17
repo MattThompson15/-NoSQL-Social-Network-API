@@ -10,6 +10,7 @@ const {
     removeFriend 
 } = require('../../controllers/user-controller');
 
+// Define routes for user-related operations
 router.route('/').get(getAllUsers).post(createUser);
 
 router.route('/:userId').get(getUserById).put(updateUserById).delete(deleteUserById);

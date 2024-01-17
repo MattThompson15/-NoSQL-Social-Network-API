@@ -10,6 +10,7 @@ const {
     deleteReaction
  } = require('../../controllers/thought-controller');
 
+ // Define routes for thought-related operations
 router.route('/').get(getAllThoughts).post(createThought);
 
 router.route('/:thoughtId').get(getThoughtsById).put(updateThoughtById).delete(deleteThought);
