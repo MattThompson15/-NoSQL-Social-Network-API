@@ -59,6 +59,10 @@ Contributions to this project are welcome.
 
 <img width="1440" alt="Screenshot 2024-01-16 at 9 35 32 PM" src="https://github.com/MattThompson15/NoSQL-Social-Network-API/assets/139708928/9872d826-0f0b-431a-8dd2-3a2366f709d7">
 
+## Walkthrough
+
+https://drive.google.com/file/d/1mCoM7YEExt0QA5TawMpANCG6u6FEbmu5/view
+
 
 ## License
 
