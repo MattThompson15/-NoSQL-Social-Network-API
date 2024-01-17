@@ -55,6 +55,11 @@ This project is a social network web application where users can share their tho
 
 Contributions to this project are welcome. 
 
+## Screenshot
+
+<img width="1440" alt="Screenshot 2024-01-16 at 9 35 32 PM" src="https://github.com/MattThompson15/NoSQL-Social-Network-API/assets/139708928/9872d826-0f0b-431a-8dd2-3a2366f709d7">
+
+
 ## License
 
 MIT
