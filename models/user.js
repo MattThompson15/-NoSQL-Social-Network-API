@@ -7,6 +7,7 @@ const userSchema = new Schema({
         required: true,
         trim: true
     },
+    // Email adress, unique and required, validated with a regex pattern
     email: {
         type: String, 
         required: true,
@@ -18,18 +19,21 @@ const userSchema = new Schema({
         }
     },
 
-
+    // Array of _id values referencing the Thought model
     thoughts: [{
         type: Schema.Types.ObjectId,
         ref: 'Thought',
     }],
+
+    //Array of friend IDs, self-referencing the User model
     friends: [{
         type: Schema.Types.ObjectId,
         ref: 'User',
     }
     ],
 },
-{
+{   
+    // Include virtuals when converting documents to JSON   
     toJSON: {
         virtuals: true,
     },
@@ -37,6 +41,7 @@ const userSchema = new Schema({
 }
 );
 
+// Virtual property to count the number of friends a user has
 userSchema.virtual('friendCount').get(function() {
     return this.friends.length;
 });

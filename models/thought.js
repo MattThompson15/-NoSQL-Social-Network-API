@@ -1,6 +1,7 @@
 const { Schema, model } = require('mongoose');
 const reactionSchema = require('./Reaction');
 
+//Content of the thought, with a minimum and maximum lenght
 const thoughtSchema = new Schema({
     thoughtText: {
         type: String,
@@ -14,6 +15,7 @@ const thoughtSchema = new Schema({
         // Use a getter method to format the timestamp on query
         get: timestamp => new Date(timestamp).toLocaleDateString()
     },
+    // Username of the thought's creator
     username: {
         type: String,
         required: true
@@ -21,7 +23,8 @@ const thoughtSchema = new Schema({
     // Use ReactionsSchema to validate data for a reply
     reactions: [reactionSchema]
 },
-{
+{   
+    // Include virtuals when converting documents to JSON
     toJSON: {
         getters: true,
         virtuals: true
@@ -29,6 +32,7 @@ const thoughtSchema = new Schema({
     id: false
 });
 
+// Virtual property to count the number of reactions to a thought
 thoughtSchema.virtual('reactionCount').get(function() {
     return this.reactions.length;
 });
